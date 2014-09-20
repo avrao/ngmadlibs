@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<title>Mad Libs</title>
+	<style type="text/css">
+	</style>
+</head>
+<body ng-controller="myCtrl" >
+<div id="container">
+	<header style="">
+		<img class="header" src="images/mad-lib-happy-face.png" width="100" height="100" />
+		
+		<img id="image2" class="header" src="images/ng-mad-libs-logo.png" width="260" height="70"/><label>Automate This!</label>
+	</header>
+
+	<table align="center">
+	<thead><th colspan="3">Provide the following words:</th>
+		   <th colspan="3">&nbsp;</th>
+	</thead>
+	<tr>
+		<td><input type="text" ng-model="data.personname" placeholder="person name"></td>
+		<td><input type="text" ng-model="data.jobtitle" placeholder="job title"></td>
+		<td><input type="text" ng-model="data.tedioustask" placeholder="tedious task"></td>
+	</tr>
+	<tr>
+		
+		<td><input type="text" ng-model="data.dirtytask" placeholder="dirty task"></td>
+		<td><input type="text" ng-model="data.celebrity" placeholder="celebrity"></td>
+		<td><input type="text" ng-model="data.uselessskill" placeholder="useless skill"></td>
+	</tr>
+	<tr>
+		<td><input type="text" ng-model="data.adjective" placeholder="adjective"></td>
+		<td><input type="text" ng-model="data.obnoxiouscelebrity" placeholder="obnoxious celebrity"></td>
+		<td><input type="text" ng-model="data.hugenumber" placeholder="huge number"></td>
+	</tr>
+	</table>
+	<p><input type="radio" ng-model="gender" value="1">Person Female?<br />
+	   <input type="radio" ng-model="gender" value="0">Person Male?
+	<div id="lineWrapper"></div>
+	<div ng-if="gender == '1'" class="padding">
+		<p><u>{{data.personname}}</u> was an <u>{{data.jobtitle}}</u> who loved technology. Although she loved parts of her job, she absolutely hated  <u>{{data.tedioustask}}</u> and <u>{{data.dirtytask}}</u>. So, <u>{{data.personname}}</u> met with her life mentor <u>{{data.celebrity}}</u> who told her to learn how to <u>{{data.uselessskill}}</u> with Thinkful. Thinkful didn't offer a course on <u>{{data.uselessskill}}</u> so she studied programming instead. </p>
+
+		<p>What a great decision! With her new skills, {{data.personname}} built a(n) <u>{{data.adjective}}</u> robot named <u>{{data.obnoxiuouscelbertity}}</u> that not only loved <u>{{data.dirtytask}}</u> but did it <u>{{data.hugenumber}}</u> faster.</p>
+	</div>
+	<div ng-if="gender == '0'" class="padding">
+		<p class="p"><u>{{data.personname}}</u> was an <u>{{data.jobtitle}}</u> who loved technology. Although he loved parts of his job, he absolutely hated  <u>{{data.tedioustask}}</u> and <u>{{data.dirtytask}}</u>. So, <u>{{data.personname}}</u> met with his life mentor <u>{{data.celebrity}}</u> who told him to learn how to <u>{{data.uselessskill}}</u> with Thinkful. Thinkful didn't offer a course on <u>{{data.uselessskill}}</u> so he studied programming instead. </p>
+
+		<p class="p">What a great decision! With his new skills, {{data.personname}} built a(n) <u>{{data.adjective}}</u> robot named <u>{{data.obnoxiuouscelbertity}}</u> that not only loved <u>{{data.dirtytask}}</u> but did it <u>{{data.hugenumber}}</u> faster.</p>
+	</div>
+</div>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</body>
